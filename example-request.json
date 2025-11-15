@@ -1,0 +1,670 @@
+{
+  "input": {
+    "workflow": {
+      "6": {
+        "inputs": {
+          "text": "Instareal, l3n0v0, underexposed outdoor scene, amateur quality, \n\n[ your prompt here :p ]\n\ncandid style, caught in the moment",
+          "clip": [
+            "67",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "67",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Negative Prompt)"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "82",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "38": {
+        "inputs": {
+          "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "39": {
+        "inputs": {
+          "filename": "wan_2.1_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "55": {
+        "inputs": {
+          "value": 1.0000000000000002,
+          "model": [
+            "64",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingSD3",
+        "_meta": {
+          "title": "ModelSamplingSD3"
+        }
+      },
+      "56": {
+        "inputs": {
+          "filename": "wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "59": {
+        "inputs": {
+          "value": 832,
+          "width": [
+            "66",
+            0
+          ],
+          "height": [
+            "66",
+            1
+          ]
+        },
+        "class_type": "EmptyHunyuanLatentVideo",
+        "_meta": {
+          "title": "EmptyHunyuanLatentVideo"
+        }
+      },
+      "64": {
+        "inputs": {
+          "value": 11,
+          "model": [
+            "65",
+            0
+          ],
+          "conditioning": [
+            "95",
+            0
+          ]
+        },
+        "class_type": "WanVideoNAG",
+        "_meta": {
+          "title": "WanVideoNAG"
+        }
+      },
+      "65": {
+        "inputs": {
+          "text": "disabled",
+          "model": [
+            "67",
+            0
+          ]
+        },
+        "class_type": "PathchSageAttentionKJ",
+        "_meta": {
+          "title": "PathchSageAttentionKJ"
+        }
+      },
+      "66": {
+        "inputs": {
+          "value": 1024
+        },
+        "class_type": "CR SDXL Aspect Ratio",
+        "_meta": {
+          "title": "CR SDXL Aspect Ratio"
+        }
+      },
+      "67": {
+        "inputs": {
+          "value": {},
+          "model": [
+            "56",
+            0
+          ],
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "Power Lora Loader (rgthree)",
+        "_meta": {
+          "title": "Power Lora Loader (rgthree)"
+        }
+      },
+      "68": {
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "69": {
+        "inputs": {
+          "filename": "wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "70": {
+        "inputs": {
+          "value": {},
+          "model": [
+            "69",
+            0
+          ]
+        },
+        "class_type": "Power Lora Loader (rgthree)",
+        "_meta": {
+          "title": "Power Lora Loader (rgthree)"
+        }
+      },
+      "71": {
+        "inputs": {
+          "text": "disabled",
+          "model": [
+            "70",
+            0
+          ]
+        },
+        "class_type": "PathchSageAttentionKJ",
+        "_meta": {
+          "title": "PathchSageAttentionKJ"
+        }
+      },
+      "73": {
+        "inputs": {
+          "value": 1.0000000000000002,
+          "model": [
+            "71",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingSD3",
+        "_meta": {
+          "title": "ModelSamplingSD3"
+        }
+      },
+      "74": {
+        "inputs": {
+          "model_name": "4xLSDIR.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "UpscaleModelLoader"
+        }
+      },
+      "75": {
+        "inputs": {
+          "upscale_model": [
+            "74",
+            0
+          ],
+          "image": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "ImageUpscaleWithModel"
+        }
+      },
+      "76": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "75",
+            0
+          ]
+        },
+        "class_type": "ImageScaleBy",
+        "_meta": {
+          "title": "ImageScaleBy"
+        }
+      },
+      "77": {
+        "inputs": {
+          "pixels": [
+            "76",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "79": {
+        "inputs": {
+          "samples": [
+            "129",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "80": {
+        "inputs": {
+          "images": [
+            "132",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "81": {
+        "inputs": {
+          "value": 0.5000000000000001,
+          "model": [
+            "73",
+            0
+          ],
+          "positive": [
+            "99",
+            0
+          ],
+          "negative": [
+            "96",
+            0
+          ],
+          "latent_image": [
+            "59",
+            0
+          ]
+        },
+        "class_type": "ClownsharKSampler_Beta",
+        "_meta": {
+          "title": "ClownsharKSampler_Beta"
+        }
+      },
+      "82": {
+        "inputs": {
+          "value": 0.3400000000000001,
+          "model": [
+            "55",
+            0
+          ],
+          "positive": [
+            "99",
+            0
+          ],
+          "negative": [
+            "96",
+            0
+          ],
+          "latent_image": [
+            "81",
+            0
+          ]
+        },
+        "class_type": "ClownsharKSampler_Beta",
+        "_meta": {
+          "title": "ClownsharKSampler_Beta"
+        }
+      },
+      "83": {
+        "inputs": {
+          "value": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_ihdlp_00027_.png&type=temp&subfolder=&rand=0.7285512130576175"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_ihdlp_00028_.png&type=temp&subfolder=&rand=0.7170592244583379"
+            }
+          ],
+          "image_a": [
+            "8",
+            0
+          ],
+          "image_b": [
+            "132",
+            0
+          ]
+        },
+        "class_type": "Image Comparer (rgthree)",
+        "_meta": {
+          "title": "Image Comparer (rgthree)"
+        }
+      },
+      "84": {
+        "inputs": {
+          "value": 0.10000000000000002,
+          "model": [
+            "102",
+            0
+          ],
+          "positive": [
+            "100",
+            0
+          ],
+          "negative": [
+            "97",
+            0
+          ],
+          "latent_image": [
+            "77",
+            0
+          ]
+        },
+        "class_type": "ClownsharKSampler_Beta",
+        "_meta": {
+          "title": "ClownsharKSampler_Beta"
+        }
+      },
+      "88": {
+        "inputs": {
+          "upscale_model": [
+            "89",
+            0
+          ],
+          "image": [
+            "170",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "ImageUpscaleWithModel"
+        }
+      },
+      "89": {
+        "inputs": {
+          "model_name": "1x-ITF-SkinDiffDetail-Lite-v1.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "UpscaleModelLoader"
+        }
+      },
+      "91": {
+        "inputs": {
+          "value": 0.15000000000000002,
+          "image": [
+            "88",
+            0
+          ]
+        },
+        "class_type": "LayerFilter: AddGrain",
+        "_meta": {
+          "title": "LayerFilter: AddGrain"
+        }
+      },
+      "95": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "96": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "97": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "98": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "99": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "100": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "101": {
+        "inputs": {
+          "anything": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "Anything Everywhere",
+        "_meta": {
+          "title": "Anything Everywhere"
+        }
+      },
+      "102": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "109": {
+        "inputs": {},
+        "class_type": "Fast Groups Bypasser (rgthree)",
+        "_meta": {
+          "title": "Fast Groups Bypasser (rgthree)"
+        }
+      },
+      "129": {
+        "inputs": {
+          "value": 0.20000000000000004,
+          "model": [
+            "102",
+            0
+          ],
+          "positive": [
+            "100",
+            0
+          ],
+          "negative": [
+            "97",
+            0
+          ],
+          "latent_image": [
+            "84",
+            0
+          ]
+        },
+        "class_type": "ClownsharKSampler_Beta",
+        "_meta": {
+          "title": "ClownsharKSampler_Beta"
+        }
+      },
+      "130": {
+        "inputs": {
+          "value": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_dspav_00001_.png&type=temp&subfolder=&rand=0.9737300924803445"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_dspav_00002_.png&type=temp&subfolder=&rand=0.24130062689999732"
+            }
+          ],
+          "image_a": [
+            "8",
+            0
+          ],
+          "image_b": [
+            "79",
+            0
+          ]
+        },
+        "class_type": "Image Comparer (rgthree)",
+        "_meta": {
+          "title": "Image Comparer (rgthree)"
+        }
+      },
+      "132": {
+        "inputs": {
+          "value": 1,
+          "image": [
+            "91",
+            0
+          ]
+        },
+        "class_type": "Image Chromatic Aberration",
+        "_meta": {
+          "title": "Image Chromatic Aberration"
+        }
+      },
+      "134": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "135": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "136": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "170": {
+        "inputs": {
+          "value": 512,
+          "image": [
+            "79",
+            0
+          ],
+          "model": [
+            "134",
+            0
+          ],
+          "clip": [
+            "136",
+            0
+          ],
+          "positive": [
+            "100",
+            0
+          ],
+          "negative": [
+            "97",
+            0
+          ],
+          "bbox_detector": [
+            "172",
+            0
+          ],
+          "sam_model_opt": [
+            "171",
+            0
+          ]
+        },
+        "class_type": "FaceDetailer",
+        "_meta": {
+          "title": "FaceDetailer"
+        }
+      },
+      "171": {
+        "inputs": {
+          "filename": "sam_vit_b_01ec64.pth"
+        },
+        "class_type": "SAMLoader",
+        "_meta": {
+          "title": "SAMLoader"
+        }
+      },
+      "172": {
+        "inputs": {
+          "filename": "bbox/face_yolov8m.pt"
+        },
+        "class_type": "UltralyticsDetectorProvider",
+        "_meta": {
+          "title": "UltralyticsDetectorProvider"
+        }
+      },
+      "174": {
+        "inputs": {
+          "value": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_idioe_00001_.png&type=temp&subfolder=&rand=0.6395867351531461"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_idioe_00002_.png&type=temp&subfolder=&rand=0.24966414346936094"
+            }
+          ],
+          "image_a": [
+            "79",
+            0
+          ],
+          "image_b": [
+            "170",
+            0
+          ]
+        },
+        "class_type": "Image Comparer (rgthree)",
+        "_meta": {
+          "title": "Image Comparer (rgthree)"
+        }
+      }
+    }
+  }
+}
